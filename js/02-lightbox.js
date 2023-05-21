@@ -10,13 +10,10 @@ function createItem() {
 	galleryItems.forEach((item) => {
 		let li = document.createElement("li");
 		let link = document.createElement("a");
-		let img = document.createElement("img");
-
-		li.classList.add("gallery__item");
-
-		link.classList.add("gallery__link");
 		link.href = item.original;
-
+		let img = document.createElement("img");
+		li.classList.add("gallery__item");
+		link.classList.add("gallery__link");
 		img.classList.add("gallery__image");
 		img.src = item.preview;
 		img.alt = item.description;
@@ -25,7 +22,6 @@ function createItem() {
 		li.appendChild(link);
 		itemArr.push(li);
 	});
-
 	gallery.append(...itemArr);
 }
 

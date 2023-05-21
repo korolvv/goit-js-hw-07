@@ -1,6 +1,5 @@
 import { galleryItems } from "./gallery-items.js";
 
-
 // Change code below this line
 
 const gallery = document.querySelector(".gallery");
@@ -11,17 +10,15 @@ function createItem() {
 	galleryItems.forEach((item) => {
 		let li = document.createElement("li");
 		let link = document.createElement("a");
-        let img = document.createElement("img");
-        
-        li.classList.add("gallery__item");
-        
+		link.href = item.original;
+		let img = document.createElement("img");
+		li.classList.add("gallery__item");
 		link.classList.add("gallery__link");
-        link.href = item.original;
-        
 		img.classList.add("gallery__image");
 		img.src = item.preview;
-        img.alt = item.description;
-        
+		img.alt = item.description;
+		img.dataset.source = item.original;
+
 		link.appendChild(img);
 		li.appendChild(link);
 		itemArr.push(li);
